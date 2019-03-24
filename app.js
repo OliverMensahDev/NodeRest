@@ -5,11 +5,10 @@ const bodyParser = require('body-parser');
 const app = express();
 
 if (process.env.ENV === 'Test') {
-  console.log('This is a test');
-  const db = mongoose.connect('mongodb://localhost/bookAPI_Test');
+  console.log('Test Server');
+  mongoose.connect('mongodb://localhost/bookAPI_Test');
 } else {
-  console.log('This is for real');
-  const db = mongoose.connect('mongodb://localhost/bookAPI');
+  mongoose.connect('mongodb://localhost/bookAPI');
 }
 
 
